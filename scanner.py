@@ -14,13 +14,13 @@ TOKEN_SPECIFICATIONS = [
 ]
 
 class Token:
-    def _init_(self, type, value, line, column):
+    def __init__(self, type, value, line, column):
         self.type = type
         self.value = value
         self.line = line
         self.column = column
 
-    def _repr_(self):
+    def __repr__(self):
         if self.type == 'Identifiers':
             return f"<Identifiers, \"{self.value}\">"
         elif self.type == 'Numeric_constants':
@@ -84,5 +84,5 @@ def main():
     except Exception as e:
         print(f"An unexpected error occurred: {e}")
 
-if _name_ == "_main_":
+if __name__ == "__main__":
     main()
